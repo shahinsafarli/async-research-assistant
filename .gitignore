@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+ 
+# Project secrets — NEVER commit these
+.env
+ 
+# Database (auto-generated, machine-specific)
+*.db
+*.sqlite3
+ 
+# Logs
+*.log
+ 
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+ 
+# Build artefacts
+dist/
+build/
+*.egg-info/
