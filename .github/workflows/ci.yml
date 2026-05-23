@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Lint
+        run: ruff check src/ tests/
+
+      - name: Type check
+        run: mypy src/
+
+      - name: Run provided smoke tests
+        run: pytest tests/test_ai_smoke.py -v
+
+      - name: Run full test suite with coverage
+        run: pytest --cov=src --cov-fail-under=60 --cov-report=term-missing
+
+      - name: Docker build
+        run: docker build --platform linux/amd64 -t finalproj .

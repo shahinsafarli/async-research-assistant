@@ -14,7 +14,8 @@ httpx==0.27.0
 aiohttp==3.9.5
 
 # ===== Database / storage =====
-aiosqlite==0.20.0
+aiosqlite==0.20.0          # SQLite backend (default dev)
+asyncpg==0.29.0            # PostgreSQL backend (Docker Compose / production)
 
 # ===== Web search backend =====
 duckduckgo-search==6.2.6

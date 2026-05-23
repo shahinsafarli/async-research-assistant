@@ -88,7 +88,8 @@ def test_in_memory_cache_zero_ttl_never_expires():
     cache = InMemoryCache(ttl_seconds=0)
     data = [{"title": "T", "url": "U", "snippet": "S", "origin": "wikipedia"}]
     cache.set("wiki", "test", data)
-    import time; time.sleep(0.1)
+    import time
+    time.sleep(0.1)
     assert cache.get("wiki", "test") is not None
 
 

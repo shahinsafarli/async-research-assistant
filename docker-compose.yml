@@ -1,15 +1,62 @@
 version: "3.9"
 
+# ================================================================
+# Async Research Assistant — Docker Compose
+#
+# Services:
+#   db          — PostgreSQL 16 (persistent named volume)
+#   researcher  — Application (waits for db healthcheck)
+#
+# Quick start:
+#   cp .env.example .env        # fill in API keys
+#   docker compose up --build
+#
+# One-off CLI inside Docker:
+#   docker compose run --rm researcher python -m researcher ask "What is photosynthesis?"
+#
+# Run offline demo (no keys needed):
+#   docker compose run --rm researcher python scripts/demo.py --offline
+# ================================================================
+
 services:
+
+  # ── PostgreSQL ──────────────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB:       researcher
+      POSTGRES_USER:     researcher
+      POSTGRES_PASSWORD: researcher
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U researcher -d researcher"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ── Application ─────────────────────────────────────────────
   researcher:
     build: .
+    restart: unless-stopped
     env_file: .env
+    environment:
+      # Override DATABASE_URL to point at the Compose PostgreSQL service.
+      # SQLite is still used when DATABASE_URL is not set (e.g. local dev).
+      DATABASE_URL: postgresql+asyncpg://researcher:researcher@db:5432/researcher
+    depends_on:
+      db:
+        condition: service_healthy
     volumes:
       - ./artefacts:/app/artefacts
       - researcher_cache:/app/.cache
-    # Override CMD to run the full demo:
-    # docker compose run researcher python scripts/demo.py --offline
-    command: python demo_ai.py --offline
+    # Default: offline demo.  Override in docker compose run or for live mode:
+    #   docker compose run --rm researcher python scripts/demo.py
+    command: python scripts/demo.py --offline
 
 volumes:
+  pgdata:
   researcher_cache:
