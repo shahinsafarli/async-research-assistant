@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  researcher:
+    build: .
+    env_file: .env
+    volumes:
+      - ./artefacts:/app/artefacts
+      - researcher_cache:/app/.cache
+    # Override CMD to run the full demo:
+    # docker compose run researcher python scripts/demo.py --offline
+    command: python demo_ai.py --offline
+
+volumes:
+  researcher_cache:
