@@ -4,7 +4,7 @@
 > web-search API **in parallel**, then synthesizes a single cited answer using
 > an LLM.
 
-**Team:** Shahin Safarli · Jeyhun Aliyev · Emil Jafarov  
+**Team:** Shahin Safarli · Jeyhuna Sevdiyeva · Emil Jafarov  
 **Topic:** 4 — Async Research Assistant · **Course:** AI-ENG-110 Software Engineering, AI Academy  
 **Repository:** https://github.com/shahinsafarli/async-research-assistant  
 **Due:** May 23, 2026 at 23:59 (UTC+4)
