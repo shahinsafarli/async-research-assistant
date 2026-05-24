@@ -1,0 +1,73 @@
+========================================================================
+Q: What is photosynthesis and what are its main stages?
+
+A: Based on the available sources, this topic involves several important concepts [1]. Research in this area has grown substantially [2]. Multiple perspectives exist on the subject [1][2][3].
+
+References:
+  [1] (wikipedia) Wikipedia Overview
+      https://en.wikipedia.org/wiki/Example
+  [2] (arxiv) arXiv Research Paper
+      https://arxiv.org/abs/0000.00000
+  [3] (web) Web Resource
+      https://example.com/resource
+
+[elapsed: 3.60s | sources: 3 | failed: none]
+========================================================================
+Q: How do transformer-based language models handle long context windows?
+
+A: Based on the available sources, this topic involves several important concepts [1]. Research in this area has grown substantially [2]. Multiple perspectives exist on the subject [1][2][3].
+
+References:
+  [1] (wikipedia) Wikipedia Overview
+      https://en.wikipedia.org/wiki/Example
+  [2] (arxiv) arXiv Research Paper
+      https://arxiv.org/abs/0000.00000
+  [3] (web) Web Resource
+      https://example.com/resource
+
+[elapsed: 3.54s | sources: 3 | failed: none]
+========================================================================
+Q: What were the main causes of the 2008 financial crisis?
+
+A: Based on the available sources, this topic involves several important concepts [1]. Research in this area has grown substantially [2]. Multiple perspectives exist on the subject [1][2][3].
+
+References:
+  [1] (wikipedia) Wikipedia Overview
+      https://en.wikipedia.org/wiki/Example
+  [2] (arxiv) arXiv Research Paper
+      https://arxiv.org/abs/0000.00000
+  [3] (web) Web Resource
+      https://example.com/resource
+
+[elapsed: 3.51s | sources: 3 | failed: none]
+========================================================================
+Q: What is the current state of fusion energy research?
+
+A: Based on the available sources, this topic involves several important concepts [1]. Research in this area has grown substantially [2]. Multiple perspectives exist on the subject [1][2][3].
+
+References:
+  [1] (wikipedia) Wikipedia Overview
+      https://en.wikipedia.org/wiki/Example
+  [2] (arxiv) arXiv Research Paper
+      https://arxiv.org/abs/0000.00000
+  [3] (web) Web Resource
+      https://example.com/resource
+
+[elapsed: 3.55s | sources: 3 | failed: none]
+========================================================================
+Q: How does CRISPR-Cas9 gene editing work at a molecular level?
+
+A: Based on the available sources, this topic involves several important concepts [1]. Research in this area has grown substantially [2]. Multiple perspectives exist on the subject [1][2][3].
+
+References:
+  [1] (wikipedia) Wikipedia Overview
+      https://en.wikipedia.org/wiki/Example
+  [2] (arxiv) arXiv Research Paper
+      https://arxiv.org/abs/0000.00000
+  [3] (web) Web Resource
+      https://example.com/resource
+
+[elapsed: 3.50s | sources: 3 | failed: none]
+
+========================================================================
+Total wall-clock time: 17.80s for 5 question(s)
